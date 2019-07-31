@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-ondasDigital", "Micro-ondasDigital.csproj", "{C970ACFB-35AE-4F8E-A525-66D0D4CC9B02}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-ondasDigital.AppService", "..\Micro-ondasDigital.AppService\Micro-ondasDigital.AppService.csproj", "{42FD036B-8AFB-405B-9239-3C1FC73681F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-ondasDigital.Domain", "..\Micro-ondasDigital.Domain\Micro-ondasDigital.Domain.csproj", "{0195E5E4-2777-4AC2-82D2-D5B680710612}"
@@ -15,16 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-ondasDigital.IoC", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-ondasDigital.Tests", "..\Micro-ondasDigital.Tests\Micro-ondasDigital.Tests.csproj", "{37F8E74A-7E6B-40A3-A654-0B332452686A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro-ondasDigital.App", "..\Micro-ondasDigital.App\Micro-ondasDigital.App.csproj", "{B0D86D18-5150-4783-8FFF-CE6EC0EBEC68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C970ACFB-35AE-4F8E-A525-66D0D4CC9B02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C970ACFB-35AE-4F8E-A525-66D0D4CC9B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C970ACFB-35AE-4F8E-A525-66D0D4CC9B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C970ACFB-35AE-4F8E-A525-66D0D4CC9B02}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42FD036B-8AFB-405B-9239-3C1FC73681F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42FD036B-8AFB-405B-9239-3C1FC73681F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42FD036B-8AFB-405B-9239-3C1FC73681F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{37F8E74A-7E6B-40A3-A654-0B332452686A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37F8E74A-7E6B-40A3-A654-0B332452686A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37F8E74A-7E6B-40A3-A654-0B332452686A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D86D18-5150-4783-8FFF-CE6EC0EBEC68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D86D18-5150-4783-8FFF-CE6EC0EBEC68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D86D18-5150-4783-8FFF-CE6EC0EBEC68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D86D18-5150-4783-8FFF-CE6EC0EBEC68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
