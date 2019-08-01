@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using MicroondasDigital.Domain.MicroondasDigitais.Results;
 
 namespace MicroondasDigital.App.Controles
 {
-    public partial class frmInstrucoes : DevExpress.XtraEditors.XtraForm
+    public partial class FrmInstrucoes : DevExpress.XtraEditors.XtraForm
     {
-        public frmInstrucoes()
+        private PreDefinidosResult _preDefinido;
+        public FrmInstrucoes(PreDefinidosResult preDefinido)
         {
+            _preDefinido = preDefinido;
+
             InitializeComponent();
+        }
+
+        private void FrmInstrucoes_Load(object sender, System.EventArgs e)
+        {
+            txtNome.Text = _preDefinido.Nome;
+            txtTempo.Text = $"{_preDefinido.Tempo.Minutes:00}:{_preDefinido.Tempo.Seconds:00}";
+            txtInstrucoes.Text = _preDefinido.Instrucao;
+            txtPotencia.Text = _preDefinido.Potencia.ToString();
         }
     }
 }

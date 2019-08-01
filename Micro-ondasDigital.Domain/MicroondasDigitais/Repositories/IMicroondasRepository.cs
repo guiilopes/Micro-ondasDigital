@@ -11,6 +11,6 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Repositories
 
         void Adicionar(Microondas microondas);
 
-        IEnumerable<ProgramasPreDefinidosResult> ObterProgramasPreDefinidos();
+        IEnumerable<PreDefinidosResult> ObterProgramasPreDefinidos();
     }
 }

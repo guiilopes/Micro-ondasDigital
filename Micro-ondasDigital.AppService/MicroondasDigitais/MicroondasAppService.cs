@@ -21,7 +21,7 @@ namespace MicroondasDigital.AppService.Microondas
         public void InicioRapido(int potencia, TimeSpan tempoInformado)
             => _repository.InicioRapido(potencia, tempoInformado);
 
-        public IEnumerable<ProgramasPreDefinidosResult> ObterProgramasPreDefinidos()
+        public IEnumerable<PreDefinidosResult> ObterProgramasPreDefinidos()
             => _repository.ObterProgramasPreDefinidos();
     }
 }

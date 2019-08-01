@@ -3,7 +3,7 @@ using prmToolkit.NotificationPattern;
 
 namespace MicroondasDigital.Domain.MicroondasDigitais.Results
 {
-    public class ProgramasPreDefinidosResult : Notifiable
+    public class PreDefinidosResult : Notifiable
     {
         public string Nome { get; set; }
         public int Potencia { get; set; }
@@ -13,7 +13,7 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Results
 
         public void Validar()
         {
-            new AddNotifications<ProgramasPreDefinidosResult>(this)
+            new AddNotifications<PreDefinidosResult>(this)
                 .IfNull(x => x.Tempo, "Tempo inválido")
                 .IfNullOrEmpty(x => x.Nome, "Predefinição inválida!")
                 .IfNullOrEmpty(x => x.Instrucao, "Instrução inválida!")

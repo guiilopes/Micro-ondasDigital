@@ -38,7 +38,7 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
             TempoInformado = tempoInformado;
         }
 
-        public IEnumerable<ProgramasPreDefinidosResult> ObterProgramasPreDefinidos()
+        public IEnumerable<PreDefinidosResult> ObterProgramasPreDefinidos()
         {
             var predefinicaoUm = PreencherResult("Frango", 10, new TimeSpan(0, 1, 0), "", "f");
 
@@ -50,7 +50,7 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
 
             var predefinicaoCinco = PreencherResult("Arroz", 10, new TimeSpan(0, 0, 30), "", "a");
 
-            return new List<ProgramasPreDefinidosResult>
+            return new List<PreDefinidosResult>
             {
                 predefinicaoUm,
                 predefinicaoDois,
@@ -60,9 +60,9 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
             };
         }
 
-        public ProgramasPreDefinidosResult PreencherResult(string nome, int potencia, TimeSpan tempo, string instrucao, string caractere)
+        public PreDefinidosResult PreencherResult(string nome, int potencia, TimeSpan tempo, string instrucao, string caractere)
         {
-            return new ProgramasPreDefinidosResult
+            return new PreDefinidosResult
             {
                 Nome = nome,
                 Potencia = potencia,

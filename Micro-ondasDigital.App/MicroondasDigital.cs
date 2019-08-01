@@ -18,7 +18,7 @@ namespace MicroondasDigital.App
         private bool _pausado;
         private string _caractere;
 
-        private IEnumerable<ProgramasPreDefinidosResult> _preDefinidos;
+        private IEnumerable<PreDefinidosResult> _preDefinidos;
         public MicroondasDigital()
         {
             InitializeComponent();
@@ -203,7 +203,12 @@ namespace MicroondasDigital.App
 
         private void CmdInstrucoes_Click(object sender, EventArgs e)
         {
-            var formInstrucoes = new frmInstrucoes();
+            var result = _preDefinidos.FirstOrDefault(x => x.Nome.Equals(cmbPredefinido.EditValue));
+
+            
+
+
+            var formInstrucoes = new FrmInstrucoes(result);
             formInstrucoes.ShowDialog();
         }
     }
