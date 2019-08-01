@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MicroondasDigital));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.chkAquecimentoRapido = new System.Windows.Forms.CheckBox();
@@ -41,27 +40,16 @@
             this.txtTempo = new DevExpress.XtraEditors.TextEdit();
             this.cmdLigar = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmdPausar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmdPausar = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdInstrucoes = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPredefinido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempo.Properties)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MicroondasDigital.App.Properties.Resources.microondas;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(464, 291);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -220,22 +208,6 @@
             this.panel1.Size = new System.Drawing.Size(74, 90);
             this.panel1.TabIndex = 6;
             // 
-            // cmdPausar
-            // 
-            this.cmdPausar.Appearance.BackColor = System.Drawing.Color.Gold;
-            this.cmdPausar.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold);
-            this.cmdPausar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
-            this.cmdPausar.Appearance.Options.UseBackColor = true;
-            this.cmdPausar.Appearance.Options.UseFont = true;
-            this.cmdPausar.Appearance.Options.UseForeColor = true;
-            this.cmdPausar.Location = new System.Drawing.Point(3, 54);
-            this.cmdPausar.Name = "cmdPausar";
-            this.cmdPausar.Size = new System.Drawing.Size(28, 31);
-            this.cmdPausar.TabIndex = 5;
-            this.cmdPausar.Text = "||";
-            this.cmdPausar.ToolTip = "Pausar";
-            this.cmdPausar.Click += new System.EventHandler(this.CmdPausar_Click);
-            // 
             // cmdCancelar
             // 
             this.cmdCancelar.Appearance.BackColor = System.Drawing.Color.Tomato;
@@ -252,11 +224,54 @@
             this.cmdCancelar.ToolTip = "Cancelar";
             this.cmdCancelar.Click += new System.EventHandler(this.CmdCancelar_Click);
             // 
+            // cmdPausar
+            // 
+            this.cmdPausar.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.cmdPausar.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmdPausar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdPausar.Appearance.Options.UseBackColor = true;
+            this.cmdPausar.Appearance.Options.UseFont = true;
+            this.cmdPausar.Appearance.Options.UseForeColor = true;
+            this.cmdPausar.Location = new System.Drawing.Point(3, 54);
+            this.cmdPausar.Name = "cmdPausar";
+            this.cmdPausar.Size = new System.Drawing.Size(28, 31);
+            this.cmdPausar.TabIndex = 5;
+            this.cmdPausar.Text = "||";
+            this.cmdPausar.ToolTip = "Pausar";
+            this.cmdPausar.Click += new System.EventHandler(this.CmdPausar_Click);
+            // 
+            // cmdInstrucoes
+            // 
+            this.cmdInstrucoes.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(182)))), ((int)(((byte)(232)))));
+            this.cmdInstrucoes.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cmdInstrucoes.Appearance.Options.UseBackColor = true;
+            this.cmdInstrucoes.Appearance.Options.UseFont = true;
+            this.cmdInstrucoes.Location = new System.Drawing.Point(371, 134);
+            this.cmdInstrucoes.Name = "cmdInstrucoes";
+            this.cmdInstrucoes.Size = new System.Drawing.Size(68, 33);
+            this.cmdInstrucoes.TabIndex = 7;
+            this.cmdInstrucoes.Text = "Instruções";
+            this.cmdInstrucoes.Click += new System.EventHandler(this.CmdInstrucoes_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::MicroondasDigital.App.Properties.Resources.microondas;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(464, 291);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // MicroondasDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 291);
+            this.Controls.Add(this.cmdInstrucoes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTempo);
             this.Controls.Add(this.txtPotencia);
@@ -279,11 +294,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Microondas Digital";
             this.Load += new System.EventHandler(this.MicroondasDigital_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPredefinido.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempo.Properties)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,6 +320,7 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton cmdCancelar;
         private DevExpress.XtraEditors.SimpleButton cmdPausar;
+        private DevExpress.XtraEditors.SimpleButton cmdInstrucoes;
     }
 }
 

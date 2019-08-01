@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MicroondasDigital.App.Controles;
 
 namespace MicroondasDigital.App
 {
@@ -198,6 +199,12 @@ namespace MicroondasDigital.App
             txtString.Text = "";
 
             PodeEditarOsCampos(true);
+        }
+
+        private void CmdInstrucoes_Click(object sender, EventArgs e)
+        {
+            var formInstrucoes = new frmInstrucoes();
+            formInstrucoes.ShowDialog();
         }
     }
 }
