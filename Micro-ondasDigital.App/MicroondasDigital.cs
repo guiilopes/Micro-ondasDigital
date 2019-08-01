@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Text;
 using System.Windows.Forms;
+using MicroondasDigital.App.Entities;
+using MicroondasDigital.Domain.MicroondasDigitais.Entities;
+using MicroondasDigital.Domain.MicroondasDigitais.Enums;
+using MicroondasDigital.Domain.ValueObjects;
 
 namespace MicroondasDigital.App
 {
@@ -19,6 +23,9 @@ namespace MicroondasDigital.App
 
             txtPotencia.Text = "8";
             txtTempo.Text = "00:30";
+
+            Servicos.Microondas.InicioRapido(Convert.ToInt32(txtPotencia.Text),
+                                             TimeSpan.Parse($"00:{txtTempo.Text}"));
         }
 
         private void MicroondasDigital_Load(object sender, EventArgs e)
@@ -30,22 +37,21 @@ namespace MicroondasDigital.App
         {
             txtPotencia.Text = "1";
             txtTempo.Text = "00:00";
+
+            Servicos.Microondas.Adicionar(new Microondas(MicroondasOperacao.Cozimento,
+                                          new Tempo(new TimeSpan(0, 0, 1),
+                                                    new TimeSpan(0, 2, 0)),
+                                          MicroondasStatus.EmFuncionamento,
+                                          Convert.ToInt32(txtPotencia.Text)));
         }
 
-        public void AtribuirPontuacaoDeAcordoComAPotencia()
-        {
-            var portencia = Convert.ToInt32(txtPotencia.Text);
-
-            AtribuirTempo(portencia);
-        }
-
-        public void AtribuirTempo(int potencia)
+        public void AtribuirPontuacaoDeAcordoComAPotencia(int potencia)
         {
             var tempoInformado = TimeSpan.Parse($"00:{txtTempo.Text}");
             var tempo = tempoInformado.Minutes * 60 + tempoInformado.Seconds;
             TimeSpan tempoHoraMinuto;
 
-            var relogio = new System.Windows.Forms.Timer
+            var relogio = new Timer
             {
                 Interval = 1000
             };
@@ -76,10 +82,7 @@ namespace MicroondasDigital.App
             var retorno = new StringBuilder();
 
             for (var i = 0; i < potencia; i++)
-            {
                 retorno.Append("" + (char)46);
-                //retorno.Append(" ");
-            }
 
             return retorno;
         }
@@ -93,7 +96,7 @@ namespace MicroondasDigital.App
             }
 
             txtAquecido.Visible = false;
-            AtribuirPontuacaoDeAcordoComAPotencia();
+            AtribuirPontuacaoDeAcordoComAPotencia(Convert.ToInt32(txtPotencia.Text));
         }
     }
 }

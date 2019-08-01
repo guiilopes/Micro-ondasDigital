@@ -8,7 +8,7 @@
     <ProjectGuid>{37F8E74A-7E6B-40A3-A654-0B332452686A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Micro_ondasDigital.Tests</RootNamespace>
+    <RootNamespace>MicroondasDigital.Tests</RootNamespace>
     <AssemblyName>Micro-ondasDigital.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

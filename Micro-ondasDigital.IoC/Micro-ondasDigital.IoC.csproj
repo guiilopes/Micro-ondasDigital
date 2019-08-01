@@ -7,7 +7,7 @@
     <ProjectGuid>{A51CC8B5-A5DC-413F-800C-CCFFDE82EB4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Micro_ondasDigital.IoC</RootNamespace>
+    <RootNamespace>MicroondasDigital.IoC</RootNamespace>
     <AssemblyName>Micro-ondasDigital.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -37,6 +37,7 @@
     <Reference Include="Ninject.Extensions.NamedScope, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\Micro-ondasDigital\packages\Ninject.Extensions.NamedScope.3.3.0\lib\net45\Ninject.Extensions.NamedScope.dll</HintPath>
     </Reference>
+    <Reference Include="prmToolkit.NotificationPattern, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

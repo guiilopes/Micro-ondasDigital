@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B0D86D18-5150-4783-8FFF-CE6EC0EBEC68}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Micro_ondasDigital.App</RootNamespace>
+    <RootNamespace>MicroondasDigital.App</RootNamespace>
     <AssemblyName>Micro-ondasDigital.App</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\Micro-ondasDigital\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime" />
@@ -52,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Servicos.cs" />
     <Compile Include="MicroondasDigital.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +101,20 @@
   <ItemGroup>
     <Content Include="24x24_microwave.ico" />
     <None Include="Resources\microondas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Micro-ondasDigital.AppService\Micro-ondasDigital.AppService.csproj">
+      <Project>{42FD036B-8AFB-405B-9239-3C1FC73681F5}</Project>
+      <Name>Micro-ondasDigital.AppService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro-ondasDigital.Domain\Micro-ondasDigital.Domain.csproj">
+      <Project>{0195E5E4-2777-4AC2-82D2-D5B680710612}</Project>
+      <Name>Micro-ondasDigital.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro-ondasDigital.IoC\Micro-ondasDigital.IoC.csproj">
+      <Project>{A51CC8B5-A5DC-413F-800C-CCFFDE82EB4D}</Project>
+      <Name>Micro-ondasDigital.IoC</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -7,7 +7,7 @@
     <ProjectGuid>{00B06432-8C74-4474-AEA7-3609E404DFCB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Micro_ondasDigital.Infra</RootNamespace>
+    <RootNamespace>MicroondasDigital.Infra</RootNamespace>
     <AssemblyName>Micro-ondasDigital.Infra</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
