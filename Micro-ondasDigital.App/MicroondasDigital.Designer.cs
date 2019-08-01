@@ -40,10 +40,14 @@
             this.txtPotencia = new DevExpress.XtraEditors.TextEdit();
             this.txtTempo = new DevExpress.XtraEditors.TextEdit();
             this.cmdLigar = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmdPausar = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPredefinido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempo.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -197,18 +201,63 @@
             this.cmdLigar.Appearance.Options.UseBackColor = true;
             this.cmdLigar.Appearance.Options.UseFont = true;
             this.cmdLigar.Appearance.Options.UseForeColor = true;
-            this.cmdLigar.Location = new System.Drawing.Point(371, 176);
+            this.cmdLigar.Location = new System.Drawing.Point(3, 2);
             this.cmdLigar.Name = "cmdLigar";
-            this.cmdLigar.Size = new System.Drawing.Size(68, 63);
+            this.cmdLigar.Size = new System.Drawing.Size(68, 46);
             this.cmdLigar.TabIndex = 5;
             this.cmdLigar.Text = "Ligar";
+            this.cmdLigar.ToolTip = "Ligar";
             this.cmdLigar.Click += new System.EventHandler(this.CmdLigar_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            this.panel1.Controls.Add(this.cmdCancelar);
+            this.panel1.Controls.Add(this.cmdPausar);
+            this.panel1.Controls.Add(this.cmdLigar);
+            this.panel1.Location = new System.Drawing.Point(368, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(74, 90);
+            this.panel1.TabIndex = 6;
+            // 
+            // cmdPausar
+            // 
+            this.cmdPausar.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.cmdPausar.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmdPausar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdPausar.Appearance.Options.UseBackColor = true;
+            this.cmdPausar.Appearance.Options.UseFont = true;
+            this.cmdPausar.Appearance.Options.UseForeColor = true;
+            this.cmdPausar.Location = new System.Drawing.Point(3, 54);
+            this.cmdPausar.Name = "cmdPausar";
+            this.cmdPausar.Size = new System.Drawing.Size(28, 31);
+            this.cmdPausar.TabIndex = 5;
+            this.cmdPausar.Text = "||";
+            this.cmdPausar.ToolTip = "Pausar";
+            this.cmdPausar.Click += new System.EventHandler(this.CmdPausar_Click);
+            // 
+            // cmdCancelar
+            // 
+            this.cmdCancelar.Appearance.BackColor = System.Drawing.Color.Tomato;
+            this.cmdCancelar.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmdCancelar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdCancelar.Appearance.Options.UseBackColor = true;
+            this.cmdCancelar.Appearance.Options.UseFont = true;
+            this.cmdCancelar.Appearance.Options.UseForeColor = true;
+            this.cmdCancelar.Location = new System.Drawing.Point(43, 54);
+            this.cmdCancelar.Name = "cmdCancelar";
+            this.cmdCancelar.Size = new System.Drawing.Size(28, 31);
+            this.cmdCancelar.TabIndex = 5;
+            this.cmdCancelar.Text = "X";
+            this.cmdCancelar.ToolTip = "Cancelar";
+            this.cmdCancelar.Click += new System.EventHandler(this.CmdCancelar_Click);
             // 
             // MicroondasDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 291);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTempo);
             this.Controls.Add(this.txtPotencia);
             this.Controls.Add(this.cmbPredefinido);
@@ -218,7 +267,6 @@
             this.Controls.Add(this.txtString);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmdLigar);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
@@ -235,6 +283,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbPredefinido.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempo.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +302,9 @@
         private DevExpress.XtraEditors.TextEdit txtPotencia;
         private DevExpress.XtraEditors.TextEdit txtTempo;
         private DevExpress.XtraEditors.SimpleButton cmdLigar;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraEditors.SimpleButton cmdCancelar;
+        private DevExpress.XtraEditors.SimpleButton cmdPausar;
     }
 }
 

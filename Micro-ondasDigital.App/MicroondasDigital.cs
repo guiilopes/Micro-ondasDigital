@@ -13,6 +13,9 @@ namespace MicroondasDigital.App
 {
     public partial class MicroondasDigital : Form
     {
+        private Timer _relogio;
+        private bool _pausado;
+
         private IEnumerable<ProgramasPreDefinidosResult> _preDefinidos;
         public MicroondasDigital()
         {
@@ -39,18 +42,19 @@ namespace MicroondasDigital.App
 
         public void AtribuirValoresPadrao()
         {
-            txtPotencia.Text = "1";
-            txtTempo.Text = "00:00";
+            _preDefinidos = Servicos.Microondas.ObterProgramasPreDefinidos().OrderBy(x => x.Nome);
+            cmbPredefinido.Properties.DataSource = _preDefinidos;
+            cmbPredefinido.EditValue = "Arroz";
+
+            var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Arroz");
+            txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
+            txtPotencia.Text = result?.Potencia.ToString();
 
             Servicos.Microondas.Adicionar(new Microondas(MicroondasOperacao.Cozimento,
                                           new Tempo(new TimeSpan(0, 0, 1),
                                                     new TimeSpan(0, 2, 0)),
                                           MicroondasStatus.EmFuncionamento,
                                           Convert.ToInt32(txtPotencia.Text)));
-
-            _preDefinidos = Servicos.Microondas.ObterProgramasPreDefinidos().OrderBy(x => x.Nome);
-
-            cmbPredefinido.Properties.DataSource = _preDefinidos;
         }
 
         public void AtribuirPontuacaoDeAcordoComAPotencia(int potencia)
@@ -59,12 +63,12 @@ namespace MicroondasDigital.App
             var tempo = tempoInformado.Minutes * 60 + tempoInformado.Seconds;
             TimeSpan tempoHoraMinuto;
 
-            var relogio = new Timer
+            _relogio = new Timer
             {
                 Interval = 1000
             };
 
-            relogio.Tick += delegate
+            _relogio.Tick += delegate
             {
                 tempo -= 1;
 
@@ -76,13 +80,22 @@ namespace MicroondasDigital.App
 
                 if (tempo != 0) return;
 
-                relogio.Stop();
+                _relogio.Stop();
 
                 txtString.Text = "";
                 txtAquecido.Visible = true;
+
+                PodeEditarOsCampos(true);
+
             };
 
-            relogio.Start();
+            _relogio.Start();
+        }
+
+        public void PodeEditarOsCampos(bool valor)
+        {
+            txtTempo.Properties.Enabled = valor;
+            txtPotencia.Properties.Enabled = valor;
         }
 
         private StringBuilder AtribuirContagemAsterisco(int potencia)
@@ -99,11 +112,14 @@ namespace MicroondasDigital.App
         {
             if (txtTempo.Text.Equals("00:00"))
             {
-                MessageBox.Show("Horário não informado!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Horário não informado!", "Alerta!", MessageBoxButtons.OK);
                 return;
             }
 
             txtAquecido.Visible = false;
+
+            PodeEditarOsCampos(false);
+
             AtribuirPontuacaoDeAcordoComAPotencia(Convert.ToInt32(txtPotencia.Text));
         }
 
@@ -141,8 +157,35 @@ namespace MicroondasDigital.App
             }
             else
             {
-                MessageBox.Show("Alimento incompatível com o programa!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Alimento incompatível com o programa!", "Alerta!", MessageBoxButtons.OK);
             }
+        }
+
+        private void CmdPausar_Click(object sender, EventArgs e)
+        {
+            if (_relogio == null) return;
+
+            if (_pausado)
+            {
+                _relogio.Start();
+                _pausado = false;
+            }
+            else
+            {
+                _relogio.Stop();
+                _pausado = true;
+            }
+        }
+
+        private void CmdCancelar_Click(object sender, EventArgs e)
+        {
+            if(_relogio== null) return;
+            ;
+            _relogio.Stop();
+            txtTempo.Text = "00:00";
+            txtString.Text = "";
+
+            PodeEditarOsCampos(true);
         }
     }
 }
