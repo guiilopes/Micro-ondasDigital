@@ -179,8 +179,8 @@ namespace MicroondasDigital.App
 
         private void CmdCancelar_Click(object sender, EventArgs e)
         {
-            if(_relogio== null) return;
-            ;
+            if (_relogio == null) return;
+
             _relogio.Stop();
             txtTempo.Text = "00:00";
             txtString.Text = "";
