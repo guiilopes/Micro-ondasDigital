@@ -47,11 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigNinject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Micro-ondasDigital.Domain\Micro-ondasDigital.Domain.csproj">
+      <Project>{0195E5E4-2777-4AC2-82D2-D5B680710612}</Project>
+      <Name>Micro-ondasDigital.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro-ondasDigital.Infra\Micro-ondasDigital.Infra.csproj">
+      <Project>{00B06432-8C74-4474-AEA7-3609E404DFCB}</Project>
+      <Name>Micro-ondasDigital.Infra</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

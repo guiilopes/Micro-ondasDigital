@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Micro_ondasDigital.App.Properties
+namespace MicroondasDigital.App.Properties
 {
 
 
