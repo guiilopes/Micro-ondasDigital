@@ -29,24 +29,26 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
         public int Potencia { get; private set; }
         public TimeSpan TempoInformado { get; private set; }
 
+        public void Adicionar(Microondas microondas)
+            => new Microondas(microondas.Operacao, microondas.Tempo, microondas.Status, microondas.Potencia);
+
         public void InicioRapido(int potencia, TimeSpan tempoInformado)
         {
             Potencia = potencia;
             TempoInformado = tempoInformado;
         }
 
-        public void Adicionar(Microondas microondas)
-        {
-            new Microondas(microondas.Operacao, microondas.Tempo, microondas.Status, microondas.Potencia);
-        }
-
         public IEnumerable<ProgramasPreDefinidosResult> ObterProgramasPreDefinidos()
         {
-            var predefinicaoUm = PreencherResult("Frango", 10, new TimeSpan(0, 1, 0));
-            var predefinicaoDois = PreencherResult("Carne", 10, new TimeSpan(0, 1, 30));
-            var predefinicaoTres = PreencherResult("Coxinha", 2, new TimeSpan(0, 0, 30));
-            var predefinicaoQuatro = PreencherResult("Leite", 5, new TimeSpan(0, 1, 30));
-            var predefinicaoCinco = PreencherResult("Arroz", 10, new TimeSpan(0, 0, 30));
+            var predefinicaoUm = PreencherResult("Frango", 10, new TimeSpan(0, 1, 0), "", "f");
+
+            var predefinicaoDois = PreencherResult("Carne", 10, new TimeSpan(0, 1, 30), "", "b");
+
+            var predefinicaoTres = PreencherResult("Coxinha", 2, new TimeSpan(0, 0, 30), "", "c");
+
+            var predefinicaoQuatro = PreencherResult("Leite", 5, new TimeSpan(0, 1, 30), "", "l");
+
+            var predefinicaoCinco = PreencherResult("Arroz", 10, new TimeSpan(0, 0, 30), "", "a");
 
             return new List<ProgramasPreDefinidosResult>
             {
@@ -58,13 +60,15 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
             };
         }
 
-        public ProgramasPreDefinidosResult PreencherResult(string nome, int potencia, TimeSpan tempo)
+        public ProgramasPreDefinidosResult PreencherResult(string nome, int potencia, TimeSpan tempo, string instrucao, string caractere)
         {
             return new ProgramasPreDefinidosResult
             {
                 Nome = nome,
                 Potencia = potencia,
-                Tempo = tempo
+                Tempo = tempo,
+                Instrucao = instrucao,
+                Caractere = caractere
             };
         }
 

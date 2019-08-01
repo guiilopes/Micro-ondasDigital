@@ -15,6 +15,7 @@ namespace MicroondasDigital.App
     {
         private Timer _relogio;
         private bool _pausado;
+        private string _caractere;
 
         private IEnumerable<ProgramasPreDefinidosResult> _preDefinidos;
         public MicroondasDigital()
@@ -45,6 +46,7 @@ namespace MicroondasDigital.App
             _preDefinidos = Servicos.Microondas.ObterProgramasPreDefinidos().OrderBy(x => x.Nome);
             cmbPredefinido.Properties.DataSource = _preDefinidos;
             cmbPredefinido.EditValue = "Arroz";
+            _caractere = "a";
 
             var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Arroz");
             txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
@@ -103,7 +105,7 @@ namespace MicroondasDigital.App
             var retorno = new StringBuilder();
 
             for (var i = 0; i < potencia; i++)
-                retorno.Append("" + (char)46);
+                retorno.Append("" + _caractere);
 
             return retorno;
         }
@@ -128,32 +130,42 @@ namespace MicroondasDigital.App
             if (cmbPredefinido.EditValue.Equals("Arroz"))
             {
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Arroz");
+
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
                 txtPotencia.Text = result?.Potencia.ToString();
+                _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Carne"))
             {
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Carne");
+
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
                 txtPotencia.Text = result?.Potencia.ToString();
+                _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Coxinha"))
             {
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Coxinha");
+
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
                 txtPotencia.Text = result?.Potencia.ToString();
+                _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Frango"))
             {
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Frango");
+
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
                 txtPotencia.Text = result?.Potencia.ToString();
+                _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Leite"))
             {
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Leite");
+
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
                 txtPotencia.Text = result?.Potencia.ToString();
+                _caractere = result?.Caractere;
             }
             else
             {
