@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using MicroondasDigital.Domain.MicroondasDigitais.Repositories;
+using MicroondasDigital.Domain.MicroondasDigitais.Results;
 
 namespace MicroondasDigital.AppService.Microondas
 {
@@ -17,5 +20,8 @@ namespace MicroondasDigital.AppService.Microondas
 
         public void InicioRapido(int potencia, TimeSpan tempoInformado)
             => _repository.InicioRapido(potencia, tempoInformado);
+
+        public IEnumerable<ProgramasPreDefinidosResult> ObterProgramasPreDefinidos()
+            => _repository.ObterProgramasPreDefinidos();
     }
 }

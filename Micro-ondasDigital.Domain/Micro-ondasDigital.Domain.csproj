@@ -178,6 +178,7 @@
     <Compile Include="MicroondasDigitais\Enums\MicroondasOperacao.cs" />
     <Compile Include="MicroondasDigitais\Enums\MicroondasStatus.cs" />
     <Compile Include="MicroondasDigitais\Repositories\IMicroondasRepository.cs" />
+    <Compile Include="MicroondasDigitais\Results\ProgramasPreDefinidosResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueObjects\Tempo.cs" />
   </ItemGroup>
@@ -187,7 +188,6 @@
   <ItemGroup>
     <Folder Include="MicroondasDigitais\Commands\Handlers\" />
     <Folder Include="MicroondasDigitais\Commands\Inputs\" />
-    <Folder Include="MicroondasDigitais\Results\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
