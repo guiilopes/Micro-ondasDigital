@@ -118,10 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="microondas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\microondas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ArrozRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>arrozrtf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="_24x24_microwave" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\24x24_microwave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CarneRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>carnertf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CoxinhaRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>coxinhartf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FrangoRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>FrangoRtf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LeiteRtf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>LeiteRtf.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

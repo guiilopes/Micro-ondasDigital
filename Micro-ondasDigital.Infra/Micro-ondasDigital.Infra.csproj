@@ -7,7 +7,7 @@
     <ProjectGuid>{00B06432-8C74-4474-AEA7-3609E404DFCB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Micro_ondasDigital.Infra</RootNamespace>
+    <RootNamespace>MicroondasDigital.Infra</RootNamespace>
     <AssemblyName>Micro-ondasDigital.Infra</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,7 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContexts\DataContext.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UoW\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Micro-ondasDigital.Domain\Micro-ondasDigital.Domain.csproj">
+      <Project>{0195E5E4-2777-4AC2-82D2-D5B680710612}</Project>
+      <Name>Micro-ondasDigital.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

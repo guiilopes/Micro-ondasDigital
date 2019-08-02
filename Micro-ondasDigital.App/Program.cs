@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Micro_ondasDigital.App
+namespace MicroondasDigital.App
 {
     static class Program
     {
@@ -14,9 +11,11 @@ namespace Micro_ondasDigital.App
         [STAThread]
         static void Main()
         {
+            Servicos.CarregarKernel();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MicroondasDigital());
         }
     }
 }

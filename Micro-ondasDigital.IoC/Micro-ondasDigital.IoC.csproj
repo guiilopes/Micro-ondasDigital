@@ -7,7 +7,7 @@
     <ProjectGuid>{A51CC8B5-A5DC-413F-800C-CCFFDE82EB4D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Micro_ondasDigital.IoC</RootNamespace>
+    <RootNamespace>MicroondasDigital.IoC</RootNamespace>
     <AssemblyName>Micro-ondasDigital.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -37,6 +37,7 @@
     <Reference Include="Ninject.Extensions.NamedScope, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\Micro-ondasDigital\packages\Ninject.Extensions.NamedScope.3.3.0\lib\net45\Ninject.Extensions.NamedScope.dll</HintPath>
     </Reference>
+    <Reference Include="prmToolkit.NotificationPattern, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,11 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigNinject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Micro-ondasDigital.Domain\Micro-ondasDigital.Domain.csproj">
+      <Project>{0195E5E4-2777-4AC2-82D2-D5B680710612}</Project>
+      <Name>Micro-ondasDigital.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro-ondasDigital.Infra\Micro-ondasDigital.Infra.csproj">
+      <Project>{00B06432-8C74-4474-AEA7-3609E404DFCB}</Project>
+      <Name>Micro-ondasDigital.Infra</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
