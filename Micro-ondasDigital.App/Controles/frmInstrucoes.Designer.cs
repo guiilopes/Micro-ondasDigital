@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.txtInstrucoes = new System.Windows.Forms.TextBox();
             this.txtPotencia = new DevExpress.XtraEditors.TextEdit();
             this.txtTempo = new DevExpress.XtraEditors.TextEdit();
             this.txtNome = new DevExpress.XtraEditors.TextEdit();
@@ -38,8 +37,9 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.txtInstrucoes = new System.Windows.Forms.RichTextBox();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).BeginInit();
@@ -49,8 +49,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -67,16 +67,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(475, 352);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // txtInstrucoes
-            // 
-            this.txtInstrucoes.Enabled = false;
-            this.txtInstrucoes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
-            this.txtInstrucoes.Location = new System.Drawing.Point(12, 90);
-            this.txtInstrucoes.Multiline = true;
-            this.txtInstrucoes.Name = "txtInstrucoes";
-            this.txtInstrucoes.Size = new System.Drawing.Size(451, 250);
-            this.txtInstrucoes.TabIndex = 9;
             // 
             // txtPotencia
             // 
@@ -165,7 +155,7 @@
             this.layoutControlItem1,
             this.layoutControlItem3,
             this.layoutControlItem2,
-            this.layoutControlItem5});
+            this.layoutControlItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(475, 352);
             this.Root.TextVisible = false;
@@ -218,21 +208,27 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(50, 20);
             this.layoutControlItem2.TextToControlDistance = 5;
             // 
-            // layoutControlItem5
+            // txtInstrucoes
             // 
-            this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
-            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem5.Control = this.txtInstrucoes;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 53);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(455, 279);
-            this.layoutControlItem5.Text = "Instruções";
-            this.layoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(50, 20);
-            this.layoutControlItem5.TextToControlDistance = 5;
+            this.txtInstrucoes.Location = new System.Drawing.Point(12, 90);
+            this.txtInstrucoes.Name = "txtInstrucoes";
+            this.txtInstrucoes.Size = new System.Drawing.Size(451, 250);
+            this.txtInstrucoes.TabIndex = 10;
+            this.txtInstrucoes.Text = "";
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.txtInstrucoes;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 53);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(455, 279);
+            this.layoutControlItem4.Text = "Instruções";
+            this.layoutControlItem4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(50, 20);
+            this.layoutControlItem4.TextToControlDistance = 5;
             // 
             // FrmInstrucoes
             // 
@@ -264,8 +260,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,8 +276,8 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit txtPotencia;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private System.Windows.Forms.TextBox txtInstrucoes;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private System.Windows.Forms.RichTextBox txtInstrucoes;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

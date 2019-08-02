@@ -4,16 +4,15 @@ using MicroondasDigital.Domain.ValueObjects;
 using prmToolkit.NotificationPattern;
 using System;
 using System.Collections.Generic;
+using MicroondasDigital.Domain.MicroondasDigitais.Helpers;
 using MicroondasDigital.Domain.MicroondasDigitais.Results;
+using MicroondasDigital.Domain.Resources;
 
 namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
 {
     public class Microondas : Notifiable, IMicroondasRepository
     {
-        public Microondas()
-        {
-
-        }
+        public Microondas() { }
 
         public Microondas(MicroondasOperacao operacao, Tempo tempo, MicroondasStatus status, int potencia = 10)
         {
@@ -40,15 +39,15 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
 
         public IEnumerable<PreDefinidosResult> ObterProgramasPreDefinidos()
         {
-            var predefinicaoUm = PreencherResult("Frango", 10, new TimeSpan(0, 1, 0), "", "f");
+            var predefinicaoUm = MicroondasHelper.PreencherResult("Frango", 10, new TimeSpan(0, 1, 0), "f");
 
-            var predefinicaoDois = PreencherResult("Carne", 10, new TimeSpan(0, 1, 30), "", "b");
+            var predefinicaoDois = MicroondasHelper.PreencherResult("Carne", 10, new TimeSpan(0, 1, 30), "b");
 
-            var predefinicaoTres = PreencherResult("Coxinha", 2, new TimeSpan(0, 0, 30), "", "c");
+            var predefinicaoTres = MicroondasHelper.PreencherResult("Coxinha", 2, new TimeSpan(0, 0, 30), "c");
 
-            var predefinicaoQuatro = PreencherResult("Leite", 5, new TimeSpan(0, 1, 30), "", "l");
+            var predefinicaoQuatro = MicroondasHelper.PreencherResult("Leite", 5, new TimeSpan(0, 1, 30), "l");
 
-            var predefinicaoCinco = PreencherResult("Arroz", 10, new TimeSpan(0, 0, 30), "", "a");
+            var predefinicaoCinco = MicroondasHelper.PreencherResult("Arroz", 10, new TimeSpan(0, 0, 30), "a");
 
             return new List<PreDefinidosResult>
             {
@@ -57,18 +56,6 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
                 predefinicaoTres,
                 predefinicaoQuatro,
                 predefinicaoCinco
-            };
-        }
-
-        public PreDefinidosResult PreencherResult(string nome, int potencia, TimeSpan tempo, string instrucao, string caractere)
-        {
-            return new PreDefinidosResult
-            {
-                Nome = nome,
-                Potencia = potencia,
-                Tempo = tempo,
-                Instrucao = instrucao,
-                Caractere = caractere
             };
         }
 

@@ -185,6 +185,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\MicroondasHelperTest.cs" />
     <Compile Include="Domain\MicroondasTest.cs" />
     <Compile Include="Domain\TempoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

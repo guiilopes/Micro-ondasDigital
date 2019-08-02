@@ -1,4 +1,5 @@
-﻿using MicroondasDigital.Domain.MicroondasDigitais.Results;
+﻿using MicroondasDigital.Domain.MicroondasDigitais.Helpers;
+using MicroondasDigital.Domain.MicroondasDigitais.Results;
 
 namespace MicroondasDigital.App.Controles
 {
@@ -16,8 +17,9 @@ namespace MicroondasDigital.App.Controles
         {
             txtNome.Text = _preDefinido.Nome;
             txtTempo.Text = $"{_preDefinido.Tempo.Minutes:00}:{_preDefinido.Tempo.Seconds:00}";
-            txtInstrucoes.Text = _preDefinido.Instrucao;
             txtPotencia.Text = _preDefinido.Potencia.ToString();
+
+            txtInstrucoes.Rtf = MicroondasHelper.ObterInstrucao(_preDefinido.Nome);
         }
     }
 }

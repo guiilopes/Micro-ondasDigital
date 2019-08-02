@@ -3,7 +3,7 @@ using MicroondasDigital.IoC;
 using Ninject;
 using System;
 
-namespace MicroondasDigital.App.Entities
+namespace MicroondasDigital.App
 {
     public static class Servicos
     {

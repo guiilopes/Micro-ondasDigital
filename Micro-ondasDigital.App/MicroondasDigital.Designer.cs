@@ -44,6 +44,7 @@
             this.cmdPausar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdInstrucoes = new DevExpress.XtraEditors.SimpleButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmdSair = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPredefinido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempo.Properties)).BeginInit();
@@ -266,11 +267,31 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // cmdSair
+            // 
+            this.cmdSair.Appearance.BackColor = System.Drawing.Color.Tomato;
+            this.cmdSair.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdSair.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdSair.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 7F, System.Drawing.FontStyle.Bold);
+            this.cmdSair.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdSair.Appearance.Options.UseBackColor = true;
+            this.cmdSair.Appearance.Options.UseBorderColor = true;
+            this.cmdSair.Appearance.Options.UseFont = true;
+            this.cmdSair.Appearance.Options.UseForeColor = true;
+            this.cmdSair.Location = new System.Drawing.Point(385, 34);
+            this.cmdSair.Name = "cmdSair";
+            this.cmdSair.Size = new System.Drawing.Size(39, 16);
+            this.cmdSair.TabIndex = 8;
+            this.cmdSair.Text = "Sair";
+            this.cmdSair.ToolTip = "Sair do programa";
+            this.cmdSair.Click += new System.EventHandler(this.CmdSair_Click);
+            // 
             // MicroondasDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 291);
+            this.Controls.Add(this.cmdSair);
             this.Controls.Add(this.cmdInstrucoes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTempo);
@@ -321,6 +342,7 @@
         private DevExpress.XtraEditors.SimpleButton cmdCancelar;
         private DevExpress.XtraEditors.SimpleButton cmdPausar;
         private DevExpress.XtraEditors.SimpleButton cmdInstrucoes;
+        private DevExpress.XtraEditors.SimpleButton cmdSair;
     }
 }
 

@@ -1,5 +1,4 @@
-﻿using MicroondasDigital.App.Entities;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace MicroondasDigital.App

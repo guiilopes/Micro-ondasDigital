@@ -8,7 +8,7 @@ using System.Linq;
 namespace Micro_ondasDigital.Tests.Domain
 {
     [TestClass]
-    [TestCategory("Domain - ValueObject - Tempo")]
+    [TestCategory("Domain - Microondas")]
     public class MicroondasTest
     {
         [TestMethod]

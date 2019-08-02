@@ -1,4 +1,4 @@
-﻿using MicroondasDigital.App.Entities;
+﻿using MicroondasDigital.App.Controles;
 using MicroondasDigital.Domain.MicroondasDigitais.Entities;
 using MicroondasDigital.Domain.MicroondasDigitais.Enums;
 using MicroondasDigital.Domain.MicroondasDigitais.Results;
@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using MicroondasDigital.App.Controles;
 
 namespace MicroondasDigital.App
 {
@@ -205,11 +204,13 @@ namespace MicroondasDigital.App
         {
             var result = _preDefinidos.FirstOrDefault(x => x.Nome.Equals(cmbPredefinido.EditValue));
 
-            
-
-
             var formInstrucoes = new FrmInstrucoes(result);
             formInstrucoes.ShowDialog();
+        }
+
+        private void CmdSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

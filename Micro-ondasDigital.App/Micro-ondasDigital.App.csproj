@@ -70,7 +70,7 @@
     <Compile Include="Controles\frmInstrucoes.Designer.cs">
       <DependentUpon>frmInstrucoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Servicos.cs" />
+    <Compile Include="Servicos.cs" />
     <Compile Include="MicroondasDigital.cs">
       <SubType>Form</SubType>
     </Compile>
