@@ -13,10 +13,10 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Results
         public void Validar()
         {
             new AddNotifications<PreDefinidosResult>(this)
-                .IfNull(x => x.Tempo, "Tempo inválido")
-                .IfNullOrEmpty(x => x.Nome, "Predefinição inválida!")
-                .IfNullOrEmpty(x => x.Caractere, "Caractere inválido!")
-                .IfEqualsZero(x => x.Potencia, "Potência inválida!");
+                .IfNull(Tempo, "Tempo inválido")
+                .IfNullOrEmpty(Nome, "Predefinição inválida!")
+                .IfNullOrEmpty(Caractere, "Caractere inválido!")
+                .IfEqualsZero(Potencia, "Potência inválida!");
         }
     }
 }

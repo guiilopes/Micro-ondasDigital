@@ -22,6 +22,12 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Entities
             Status = status;
         }
 
+        public Microondas(int potencia, TimeSpan tempoInformado)
+        {
+            Potencia = potencia;
+            TempoInformado = tempoInformado;
+        }
+
         public MicroondasOperacao Operacao { get; private set; }
         public MicroondasStatus Status { get; private set; }
         public Tempo Tempo { get; private set; }

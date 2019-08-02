@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DevExpress.XtraEditors;
 using MicroondasDigital.Domain.MicroondasDigitais.Helpers;
 using MicroondasDigital.Domain.MicroondasDigitais.Results;
 using MicroondasDigital.Domain.Resources;
@@ -31,7 +32,7 @@ namespace Micro_ondasDigital.Tests.Domain
             {
                 Nome = "Frango",
                 Potencia = 10,
-                Tempo = new TimeSpan(0,1,0),
+                Tempo = new TimeSpan(0, 1, 0),
                 Caractere = "f"
             };
 
@@ -39,6 +40,62 @@ namespace Micro_ondasDigital.Tests.Domain
             Assert.AreEqual(lista.Potencia, predefinicao.Potencia);
             Assert.AreEqual(lista.Tempo, predefinicao.Tempo);
             Assert.AreEqual(lista.Caractere, predefinicao.Caractere);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_falso_quando_horario_valido()
+        {
+            var helper = MicroondasHelper.ValidarHorarioInformado(new TextEdit { Text = "00:01" });
+
+            Assert.IsFalse(helper);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_verdadeiro_quando_horario_invalido()
+        {
+            var helper = MicroondasHelper.ValidarHorarioInformado(new TextEdit { Text = "00:00" });
+
+            Assert.IsTrue(helper);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_falso_quando_potencia_invalido()
+        {
+            var helper = MicroondasHelper.ValidarPotenciaInformada(new TextEdit { Text = "15" });
+
+            Assert.IsFalse(helper);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_verdadeiro_quando_potencia_valido()
+        {
+            var helper = MicroondasHelper.ValidarPotenciaInformada(new TextEdit { Text = "5" });
+
+            Assert.IsTrue(helper);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_verdadeiro_quando_potencia_informada_10()
+        {
+            var helper = MicroondasHelper.ValidarPotenciaInformada(new TextEdit { Text = "10" });
+
+            Assert.IsTrue(helper);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_verdadeiro_quando_potencia_informada_1()
+        {
+            var helper = MicroondasHelper.ValidarPotenciaInformada(new TextEdit { Text = "1" });
+
+            Assert.IsTrue(helper);
+        }
+
+        [TestMethod]
+        public void Deve_retornar_falso_quando_potencia_informada_0()
+        {
+            var helper = MicroondasHelper.ValidarPotenciaInformada(new TextEdit { Text = "0" });
+
+            Assert.IsFalse(helper);
         }
     }
 }
