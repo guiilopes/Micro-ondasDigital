@@ -43,8 +43,9 @@
             this.cmdCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdPausar = new DevExpress.XtraEditors.SimpleButton();
             this.cmdInstrucoes = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdSair = new DevExpress.XtraEditors.SimpleButton();
+            this.cmdAdicionarPredefinicao = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPredefinido.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPotencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTempo.Properties)).BeginInit();
@@ -94,7 +95,7 @@
             // 
             // txtString
             // 
-            this.txtString.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtString.Font = new System.Drawing.Font("Segoe UI", 4F);
             this.txtString.Location = new System.Drawing.Point(49, 164);
             this.txtString.Margin = new System.Windows.Forms.Padding(4);
             this.txtString.Multiline = true;
@@ -112,7 +113,7 @@
             this.txtAquecido.Location = new System.Drawing.Point(65, 182);
             this.txtAquecido.Name = "txtAquecido";
             this.txtAquecido.Size = new System.Drawing.Size(201, 47);
-            this.txtAquecido.TabIndex = 3;
+            this.txtAquecido.TabIndex = 4;
             this.txtAquecido.Text = "Aquecido";
             this.txtAquecido.Visible = false;
             // 
@@ -130,7 +131,7 @@
             this.cmbPredefinido.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nome", "Nome", 10, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.cmbPredefinido.Properties.DisplayMember = "Nome";
-            this.cmbPredefinido.Properties.DropDownRows = 5;
+            this.cmbPredefinido.Properties.DropDownRows = 8;
             this.cmbPredefinido.Properties.NullText = "Arroz";
             this.cmbPredefinido.Properties.PopupSizeable = false;
             this.cmbPredefinido.Properties.ShowFooter = false;
@@ -184,7 +185,7 @@
             // 
             // cmdLigar
             // 
-            this.cmdLigar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(154)))), ((int)(((byte)(154)))));
+            this.cmdLigar.Appearance.BackColor = System.Drawing.Color.YellowGreen;
             this.cmdLigar.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmdLigar.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
             this.cmdLigar.Appearance.Options.UseBackColor = true;
@@ -220,7 +221,7 @@
             this.cmdCancelar.Location = new System.Drawing.Point(43, 54);
             this.cmdCancelar.Name = "cmdCancelar";
             this.cmdCancelar.Size = new System.Drawing.Size(28, 31);
-            this.cmdCancelar.TabIndex = 5;
+            this.cmdCancelar.TabIndex = 7;
             this.cmdCancelar.Text = "X";
             this.cmdCancelar.ToolTip = "Cancelar";
             this.cmdCancelar.Click += new System.EventHandler(this.CmdCancelar_Click);
@@ -236,14 +237,14 @@
             this.cmdPausar.Location = new System.Drawing.Point(3, 54);
             this.cmdPausar.Name = "cmdPausar";
             this.cmdPausar.Size = new System.Drawing.Size(28, 31);
-            this.cmdPausar.TabIndex = 5;
+            this.cmdPausar.TabIndex = 6;
             this.cmdPausar.Text = "||";
             this.cmdPausar.ToolTip = "Pausar";
             this.cmdPausar.Click += new System.EventHandler(this.CmdPausar_Click);
             // 
             // cmdInstrucoes
             // 
-            this.cmdInstrucoes.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(182)))), ((int)(((byte)(232)))));
+            this.cmdInstrucoes.Appearance.BackColor = System.Drawing.Color.SteelBlue;
             this.cmdInstrucoes.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold);
             this.cmdInstrucoes.Appearance.Options.UseBackColor = true;
             this.cmdInstrucoes.Appearance.Options.UseFont = true;
@@ -253,19 +254,6 @@
             this.cmdInstrucoes.TabIndex = 7;
             this.cmdInstrucoes.Text = "Instruções";
             this.cmdInstrucoes.Click += new System.EventHandler(this.CmdInstrucoes_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::MicroondasDigital.App.Properties.Resources.microondas;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(464, 291);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // cmdSair
             // 
@@ -286,12 +274,45 @@
             this.cmdSair.ToolTip = "Sair do programa";
             this.cmdSair.Click += new System.EventHandler(this.CmdSair_Click);
             // 
+            // cmdAdicionarPredefinicao
+            // 
+            this.cmdAdicionarPredefinicao.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.cmdAdicionarPredefinicao.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 16F, System.Drawing.FontStyle.Bold);
+            this.cmdAdicionarPredefinicao.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.cmdAdicionarPredefinicao.Appearance.Options.UseBackColor = true;
+            this.cmdAdicionarPredefinicao.Appearance.Options.UseFont = true;
+            this.cmdAdicionarPredefinicao.Appearance.Options.UseForeColor = true;
+            this.cmdAdicionarPredefinicao.Appearance.Options.UseTextOptions = true;
+            this.cmdAdicionarPredefinicao.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmdAdicionarPredefinicao.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.cmdAdicionarPredefinicao.Location = new System.Drawing.Point(378, 76);
+            this.cmdAdicionarPredefinicao.Name = "cmdAdicionarPredefinicao";
+            this.cmdAdicionarPredefinicao.Size = new System.Drawing.Size(53, 31);
+            this.cmdAdicionarPredefinicao.TabIndex = 6;
+            this.cmdAdicionarPredefinicao.Text = "+";
+            this.cmdAdicionarPredefinicao.ToolTip = "Adicionar predefinição";
+            this.cmdAdicionarPredefinicao.Click += new System.EventHandler(this.CmdAdicionarPredefinicao_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(52)))), ((int)(((byte)(56)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::MicroondasDigital.App.Properties.Resources.microondas;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(464, 291);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // MicroondasDigital
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 291);
             this.Controls.Add(this.cmdSair);
+            this.Controls.Add(this.cmdAdicionarPredefinicao);
             this.Controls.Add(this.cmdInstrucoes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTempo);
@@ -343,6 +364,7 @@
         private DevExpress.XtraEditors.SimpleButton cmdPausar;
         private DevExpress.XtraEditors.SimpleButton cmdInstrucoes;
         private DevExpress.XtraEditors.SimpleButton cmdSair;
+        private DevExpress.XtraEditors.SimpleButton cmdAdicionarPredefinicao;
     }
 }
 

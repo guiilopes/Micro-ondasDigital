@@ -1,4 +1,5 @@
 ﻿using System;
+using DevExpress.XtraEditors;
 using MicroondasDigital.Domain.MicroondasDigitais.Results;
 
 namespace MicroondasDigital.Domain.MicroondasDigitais.Helpers
@@ -34,6 +35,18 @@ namespace MicroondasDigital.Domain.MicroondasDigitais.Helpers
                 Tempo = tempo,
                 Caractere = caractere
             };
+        }
+
+        public static bool ValidarHorarioInformado(TextEdit tempo)
+        {
+            return tempo.Text.Equals("00:00");
+        }
+
+        public static bool ValidarPotenciaInformada(TextEdit potencia)
+        {
+            var valor = Convert.ToInt32(potencia.Text);
+
+            return valor >= 1 && valor <= 10;
         }
     }
 }

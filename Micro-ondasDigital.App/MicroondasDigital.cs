@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MicroondasDigital.Domain.MicroondasDigitais.Helpers;
 
 namespace MicroondasDigital.App
 {
@@ -18,6 +19,7 @@ namespace MicroondasDigital.App
         private string _caractere;
 
         private IEnumerable<PreDefinidosResult> _preDefinidos;
+
         public MicroondasDigital()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace MicroondasDigital.App
 
             if (!chkAquecimentoRapido.Checked) return;
 
-            txtPotencia.Text = "8";
+            txtPotencia.Text = "08";
             txtTempo.Text = "00:30";
 
             Servicos.Microondas.InicioRapido(Convert.ToInt32(txtPotencia.Text),
@@ -50,7 +52,7 @@ namespace MicroondasDigital.App
 
             var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Arroz");
             txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
-            txtPotencia.Text = result?.Potencia.ToString();
+            txtPotencia.Text = result?.Potencia.ToString("00");
 
             Servicos.Microondas.Adicionar(new Microondas(MicroondasOperacao.Cozimento,
                                           new Tempo(new TimeSpan(0, 0, 1),
@@ -112,9 +114,15 @@ namespace MicroondasDigital.App
 
         private void CmdLigar_Click(object sender, EventArgs e)
         {
-            if (txtTempo.Text.Equals("00:00"))
+            if (MicroondasHelper.ValidarHorarioInformado(txtTempo))
             {
-                MessageBox.Show("Horário não informado!", "Alerta!", MessageBoxButtons.OK);
+                MessageBox.Show("Horário não informado!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!MicroondasHelper.ValidarPotenciaInformada(txtPotencia))
+            {
+                MessageBox.Show("Potência incorreta!", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -132,7 +140,7 @@ namespace MicroondasDigital.App
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Arroz");
 
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
-                txtPotencia.Text = result?.Potencia.ToString();
+                txtPotencia.Text = result?.Potencia.ToString("00");
                 _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Carne"))
@@ -140,7 +148,7 @@ namespace MicroondasDigital.App
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Carne");
 
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
-                txtPotencia.Text = result?.Potencia.ToString();
+                txtPotencia.Text = result?.Potencia.ToString("00");
                 _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Coxinha"))
@@ -148,7 +156,7 @@ namespace MicroondasDigital.App
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Coxinha");
 
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
-                txtPotencia.Text = result?.Potencia.ToString();
+                txtPotencia.Text = result?.Potencia.ToString("00");
                 _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Frango"))
@@ -156,7 +164,7 @@ namespace MicroondasDigital.App
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Frango");
 
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
-                txtPotencia.Text = result?.Potencia.ToString();
+                txtPotencia.Text = result?.Potencia.ToString("00");
                 _caractere = result?.Caractere;
             }
             else if (cmbPredefinido.EditValue.Equals("Leite"))
@@ -164,7 +172,15 @@ namespace MicroondasDigital.App
                 var result = _preDefinidos.FirstOrDefault(x => x.Nome == "Leite");
 
                 txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
-                txtPotencia.Text = result?.Potencia.ToString();
+                txtPotencia.Text = result?.Potencia.ToString("00");
+                _caractere = result?.Caractere;
+            }
+            else if (cmbPredefinido.EditValue == cmbPredefinido?.EditValue)
+            {
+                var result = _preDefinidos.FirstOrDefault(x => x.Nome.Equals(cmbPredefinido.EditValue));
+
+                txtTempo.Text = $"{result?.Tempo.Minutes:00}:{result?.Tempo.Seconds:00}";
+                txtPotencia.Text = result?.Potencia.ToString("00");
                 _caractere = result?.Caractere;
             }
             else
@@ -211,6 +227,16 @@ namespace MicroondasDigital.App
         private void CmdSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void CmdAdicionarPredefinicao_Click(object sender, EventArgs e)
+        {
+            var adicionarPredefinicao = new FrmAdicionarPredefinicao(_preDefinidos);
+            adicionarPredefinicao.ShowDialog();
+
+            _preDefinidos = adicionarPredefinicao._preDefinidos;
+
+            cmbPredefinido.Properties.DataSource = _preDefinidos;
         }
     }
 }
