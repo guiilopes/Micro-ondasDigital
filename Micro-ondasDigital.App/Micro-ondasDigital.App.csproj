@@ -109,6 +109,8 @@
     <None Include="Assets\Fonts\DS-DIGIB.TTF" />
     <None Include="Assets\Fonts\DS-DIGII.TTF" />
     <None Include="Assets\Fonts\DS-DIGIT.TTF" />
+    <None Include="bin\Micro-ondasDigital.App.exe.config" />
+    <None Include="bin\Micro-ondasDigital.IoC.dll.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -128,6 +130,63 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="24x24_microwave.ico" />
+    <Content Include="bin\DevExpress.Data.v19.1.dll" />
+    <Content Include="bin\DevExpress.Data.v19.1.xml" />
+    <Content Include="bin\DevExpress.Pdf.v19.1.Core.dll" />
+    <Content Include="bin\DevExpress.Pdf.v19.1.Core.xml" />
+    <Content Include="bin\DevExpress.Printing.v19.1.Core.dll" />
+    <Content Include="bin\DevExpress.Printing.v19.1.Core.xml" />
+    <Content Include="bin\DevExpress.Sparkline.v19.1.Core.dll" />
+    <Content Include="bin\DevExpress.Sparkline.v19.1.Core.xml" />
+    <Content Include="bin\DevExpress.Utils.v19.1.dll" />
+    <Content Include="bin\DevExpress.Utils.v19.1.xml" />
+    <Content Include="bin\DevExpress.XtraEditors.v19.1.dll" />
+    <Content Include="bin\DevExpress.XtraEditors.v19.1.xml" />
+    <Content Include="bin\DevExpress.XtraLayout.v19.1.dll" />
+    <Content Include="bin\DevExpress.XtraLayout.v19.1.xml" />
+    <Content Include="bin\de\DevExpress.Data.v19.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.Pdf.v19.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Printing.v19.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Sparkline.v19.1.Core.resources.dll" />
+    <Content Include="bin\de\DevExpress.Utils.v19.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraEditors.v19.1.resources.dll" />
+    <Content Include="bin\de\DevExpress.XtraLayout.v19.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.Data.v19.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.Pdf.v19.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Printing.v19.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Sparkline.v19.1.Core.resources.dll" />
+    <Content Include="bin\es\DevExpress.Utils.v19.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraEditors.v19.1.resources.dll" />
+    <Content Include="bin\es\DevExpress.XtraLayout.v19.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Data.v19.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Pdf.v19.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Printing.v19.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Sparkline.v19.1.Core.resources.dll" />
+    <Content Include="bin\ja\DevExpress.Utils.v19.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraEditors.v19.1.resources.dll" />
+    <Content Include="bin\ja\DevExpress.XtraLayout.v19.1.resources.dll" />
+    <Content Include="bin\Micro-ondasDigital.App.exe" />
+    <Content Include="bin\Micro-ondasDigital.App.pdb" />
+    <Content Include="bin\Micro-ondasDigital.AppService.dll" />
+    <Content Include="bin\Micro-ondasDigital.AppService.pdb" />
+    <Content Include="bin\Micro-ondasDigital.Domain.dll" />
+    <Content Include="bin\Micro-ondasDigital.Domain.pdb" />
+    <Content Include="bin\Micro-ondasDigital.Infra.dll" />
+    <Content Include="bin\Micro-ondasDigital.Infra.pdb" />
+    <Content Include="bin\Micro-ondasDigital.IoC.dll" />
+    <Content Include="bin\Micro-ondasDigital.IoC.pdb" />
+    <Content Include="bin\Ninject.dll" />
+    <Content Include="bin\Ninject.Extensions.NamedScope.dll" />
+    <Content Include="bin\Ninject.Extensions.NamedScope.xml" />
+    <Content Include="bin\Ninject.xml" />
+    <Content Include="bin\prmToolkit.NotificationPattern.dll" />
+    <Content Include="bin\ru\DevExpress.Data.v19.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Pdf.v19.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Printing.v19.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Sparkline.v19.1.Core.resources.dll" />
+    <Content Include="bin\ru\DevExpress.Utils.v19.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraEditors.v19.1.resources.dll" />
+    <Content Include="bin\ru\DevExpress.XtraLayout.v19.1.resources.dll" />
     <None Include="Resources\microondas.png" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +202,9 @@
       <Project>{A51CC8B5-A5DC-413F-800C-CCFFDE82EB4D}</Project>
       <Name>Micro-ondasDigital.IoC</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\en-US\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
